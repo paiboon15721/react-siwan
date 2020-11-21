@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CardList from './components/CardList'
+import SearchBar from './components/SearchBar'
 import useDebounced from './hooks/useDebounced'
 import useWikiApi from './hooks/useWikiApi'
 
@@ -11,15 +12,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Wiki Search App</h1>
-      <div>
-        <label className="form-label">Search Bar</label>
-        <input
-          className="form-control"
-          type="text"
-          onChange={(e) => setTerm(e.target.value)}
-          value={term}
-        />
-      </div>
+      <SearchBar onChange={(v) => setTerm(v)} value={term} />
       <CardList results={results} />
     </div>
   )

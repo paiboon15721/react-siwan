@@ -1,9 +1,15 @@
-// import React from 'react'
+import React from 'react'
 
-// const SearchBar = () => {
-//   return <div>
-//     <label className="">Search Bar</label>
-//     <input type="text"
+const SearchBar = ({ onChange, value }) => (
+  <div>
+    <label className="form-label">Search Bar</label>
+    <input
+      className="form-control"
+      type="text"
+      onChange={(e) => onChange(e.target.value)}
+      value={value}
+    />
+  </div>
+)
 
-//   </div>
-// }
+export default SearchBar
