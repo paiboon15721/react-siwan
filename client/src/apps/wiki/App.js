@@ -1,7 +1,14 @@
 import React from 'react'
+import CardList from './components/CardList'
+
+const results = []
 
 const App = () => {
-  return <h1>wiki app</h1>
+  return (
+    <div className="container">
+      <CardList results={results} />
+    </div>
+  )
 }
 
 export default App
