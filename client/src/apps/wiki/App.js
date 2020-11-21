@@ -8,11 +8,20 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const results = await wikiApi('cat')
-      setResults(results)
+      if (term) {
+        const results = await wikiApi(term)
+        setResults(results)
+      }
     }
-    fetchData()
-  }, [])
+
+    const id = setTimeout(() => {
+      fetchData()
+    }, 1000)
+
+    return () => {
+      clearInterval(id)
+    }
+  }, [term])
 
   return (
     <div className="container">
