@@ -29,8 +29,8 @@ const App = () => {
       </div>
       <div className="row mt-0 g-2">
         {comments.map((v, i) => (
-          <div className="col-sm-6">
-            <div className="card" key={i}>
+          <div className="col-sm-6" key={i}>
+            <div className="card">
               <div className="card-body">{v}</div>
             </div>
           </div>
