@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import CardList from './components/CardList'
-import wikiApi from './wikiApi'
+import useDebounced from './hooks/useDebounced'
+import useWikiApi from './hooks/useWikiApi'
 
 const App = () => {
   const [term, setTerm] = useState('')
-  const [results, setResults] = useState([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (term) {
-        const results = await wikiApi(term)
-        setResults(results)
-      }
-    }
-
-    const id = setTimeout(() => {
-      fetchData()
-    }, 1000)
-
-    return () => {
-      clearInterval(id)
-    }
-  }, [term])
+  const debouncedTerm = useDebounced(term, 500)
+  const results = useWikiApi(debouncedTerm)
 
   return (
     <div className="container">
