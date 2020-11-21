@@ -1,40 +1,21 @@
 import React, { useState } from 'react'
+import CommentText from './components/CommentText'
+import CommentsList from './components/CommentsList'
 
 const App = () => {
   const [comments, setComments] = useState([])
-  const [currentComment, setCurrentComment] = useState('')
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-    setCurrentComment('')
+  const onSubmit = (currentComment) => {
     setComments([currentComment, ...comments])
-  }
-
-  const onCommentChange = (e) => {
-    setCurrentComment(e.target.value)
   }
 
   return (
     <div className="container">
       <div className="row">
-        <form className="mt-5" onSubmit={onSubmit}>
-          <label className="form-label">Comment Input</label>
-          <input
-            type="text"
-            value={currentComment}
-            className="form-control"
-            onChange={onCommentChange}
-          />
-        </form>
+        <CommentText handleSubmit={onSubmit} />
       </div>
       <div className="row mt-0 g-2">
-        {comments.map((v, i) => (
-          <div className="col-sm-6" key={i}>
-            <div className="card">
-              <div className="card-body">{v}</div>
-            </div>
-          </div>
-        ))}
+        <CommentsList comments={comments} />
       </div>
     </div>
   )
