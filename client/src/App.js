@@ -7,11 +7,11 @@ const App = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     setCurrentComment('')
-    console.log('Submit')
+    setComments([currentComment, ...comments])
   }
 
   const onCommentChange = (e) => {
-    console.log(e.target.value)
+    setCurrentComment(e.target.value)
   }
 
   return (
@@ -25,8 +25,8 @@ const App = () => {
           onChange={onCommentChange}
         />
       </form>
-      {comments.map((v) => (
-        <div className="card">
+      {comments.map((v, i) => (
+        <div className="card" key={i}>
           <div className="card-body">{v}</div>
         </div>
       ))}
