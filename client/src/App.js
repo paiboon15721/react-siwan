@@ -6,6 +6,7 @@ const App = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    setCurrentComment('')
     console.log('Submit')
   }
 
@@ -19,6 +20,7 @@ const App = () => {
         <label className="form-label">Comment Input</label>
         <input
           type="text"
+          value={currentComment}
           className="form-control"
           onChange={onCommentChange}
         />
