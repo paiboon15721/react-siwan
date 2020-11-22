@@ -5,15 +5,15 @@ import { useAuth } from '../stores/authContext'
 
 const Login = () => {
   const history = useHistory()
-  const { token, setToken } = useAuth()
-  const onLogin = async () => {
-    const { data } = await axios.get('http://localhost:3001/login')
-    setToken(data.token)
-    localStorage.setItem('token', data.token)
+  const { user, setUser } = useAuth()
+  const onLogin = async (role) => {
+    const { data } = await axios.get(`http://localhost:3001/${role}`)
+    setUser(data)
+    localStorage.setItem('user', JSON.stringify(data))
     history.push('/')
   }
 
-  if (token) {
+  if (user) {
     return <Redirect to="/" />
   }
 
@@ -26,8 +26,14 @@ const Login = () => {
         height: '100vh',
       }}
     >
-      <button onClick={onLogin} className="btn btn-primary">
-        Login
+      <button
+        onClick={() => onLogin('manager')}
+        className="btn btn-danger ml-3"
+      >
+        Manager
+      </button>
+      <button onClick={() => onLogin('guest')} className="btn btn-primary">
+        Guest
       </button>
     </div>
   )

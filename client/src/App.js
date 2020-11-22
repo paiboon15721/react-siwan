@@ -2,11 +2,11 @@ import React from 'react'
 import Router from './components/Router'
 import { AuthProvider } from './stores/authContext'
 
-const token = localStorage.getItem('token')
+const user = localStorage.getItem('user')
 
 const App = () => {
   return (
-    <AuthProvider token={token}>
+    <AuthProvider user={JSON.parse(user)}>
       <Router />
     </AuthProvider>
   )

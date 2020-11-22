@@ -1,6 +1,11 @@
 const data = {
-  login: {
+  manager: {
     token: 'safsfsfasf',
+    role: 'manager',
+  },
+  guest: {
+    token: 'safsfsfasf',
+    role: 'guest',
   },
 }
 

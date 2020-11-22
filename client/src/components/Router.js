@@ -8,6 +8,7 @@ import {
 import Layout from '../components/Layout'
 import Login from '../pages/Login'
 import menus from '../config/menus'
+import PrivateRoute from './PrivateRoute'
 
 const MyRouter = () => (
   <Router>
@@ -19,11 +20,11 @@ const MyRouter = () => (
         <Login />
       </Route>
       {menus.map((v) => (
-        <Route path={v.path} key={v.path}>
+        <PrivateRoute path={v.path} key={v.path}>
           <Layout>
             <v.component />
           </Layout>
-        </Route>
+        </PrivateRoute>
       ))}
       <Route exact path="*">
         <h1>404 Not Found</h1>

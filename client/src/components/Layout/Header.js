@@ -3,12 +3,12 @@ import { useAuth } from '../../stores/authContext'
 import { useHistory } from 'react-router-dom'
 
 const Header = () => {
-  const { setToken } = useAuth()
+  const { setUser } = useAuth()
   const history = useHistory()
 
   const handleSignout = () => {
-    localStorage.removeItem('token')
-    setToken('')
+    localStorage.removeItem('user')
+    setUser('')
     history.push('/login')
   }
 
