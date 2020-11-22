@@ -2,6 +2,7 @@ import Table from '../pages/Table'
 import WikiApp from '../apps/wiki/App'
 import CommentsApp from '../apps/comments/App'
 import ControlledForm from '../pages/ControlledForm'
+import UncontrolledForm from '../pages/UncontrolledForm'
 
 const menus = [
   {
@@ -23,6 +24,11 @@ const menus = [
     path: '/controlled-form',
     name: 'Controlled Form',
     component: ControlledForm,
+  },
+  {
+    path: '/Uncontrolled-form',
+    name: 'Uncontrolled Form',
+    component: UncontrolledForm,
   },
 ]
 

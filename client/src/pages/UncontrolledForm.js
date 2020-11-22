@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 
-const ControlledForm = () => {
-  const [name, setName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [department, setDepartment] = useState('3')
+const UncontrolledForm = () => {
+  const name = useRef(null)
+  const lastName = useRef(null)
+  const department = useRef(null)
 
   useEffect(() => {
-    console.log('Did mount')
+    lastName.current.focus()
   }, [])
-
-  useEffect(() => {
-    console.log('Change when typing name')
-  }, [name, department])
 
   const onSubmit = (e) => {
     e.preventDefault()
     console.log({
-      name,
-      lastName,
-      department,
+      name: name.current.value,
+      lastName: lastName.current.value,
+      department: department.current.value,
     })
     // Get form data
     // Send data to API
@@ -28,31 +24,20 @@ const ControlledForm = () => {
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">Name</label>
         <div className="col-sm-10">
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value.toUpperCase())}
-            className="form-control"
-          />
+          <input ref={name} type="text" className="form-control" />
         </div>
       </div>
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">LastName</label>
         <div className="col-sm-10">
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            className="form-control"
-          />
+          <input ref={lastName} type="text" className="form-control" />
         </div>
       </div>
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">Department</label>
         <div className="col-sm-10">
           <select
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
+            ref={department}
             className="form-select"
             aria-label="Default select example"
           >
@@ -71,4 +56,4 @@ const ControlledForm = () => {
   )
 }
 
-export default ControlledForm
+export default UncontrolledForm
