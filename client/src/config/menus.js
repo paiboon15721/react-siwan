@@ -3,6 +3,7 @@ import WikiApp from '../apps/wiki/App'
 import CommentsApp from '../apps/comments/App'
 import ControlledForm from '../pages/ControlledForm'
 import UncontrolledForm from '../pages/UncontrolledForm'
+import HookForm from '../pages/HookForm'
 
 const menus = [
   {
@@ -29,6 +30,11 @@ const menus = [
     path: '/Uncontrolled-form',
     name: 'Uncontrolled Form',
     component: UncontrolledForm,
+  },
+  {
+    path: '/hook-form',
+    name: 'Hook Form',
+    component: HookForm,
   },
 ]
 
