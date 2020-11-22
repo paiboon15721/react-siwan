@@ -1,20 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
-const menus = [
-  {
-    path: 'table',
-  },
-  {
-    path: 'wiki',
-  },
-  {
-    path: 'comments',
-  },
-  {
-    path: 'controlled-form',
-  },
-]
+import menus from '../../config/menus'
 
 const Navbar = () => {
   const { pathname } = useLocation()
@@ -27,14 +13,12 @@ const Navbar = () => {
       <div className="position-sticky pt-3">
         <ul className="nav flex-column">
           {menus.map((v) => (
-            <li className="nav-item">
+            <li className="nav-item" key={v.path}>
               <Link
-                className={`nav-link ${
-                  pathname === `/${v.path}` ? 'active' : ''
-                }`}
-                to={`/${v.path}`}
+                className={`nav-link ${pathname === v.path ? 'active' : ''}`}
+                to={v.path}
               >
-                {v.path}
+                {v.name}
               </Link>
             </li>
           ))}

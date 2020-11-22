@@ -1,7 +1,4 @@
 import React from 'react'
-import Table from '../pages/Table'
-import WikiApp from '../apps/wiki/App'
-import CommentsApp from '../apps/comments/App'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,6 +7,7 @@ import {
 } from 'react-router-dom'
 import Layout from '../components/Layout'
 import Login from '../pages/Login'
+import menus from '../config/menus'
 
 const MyRouter = () => (
   <Router>
@@ -20,21 +18,13 @@ const MyRouter = () => (
       <Route path="/login">
         <Login />
       </Route>
-      <Route path="/table">
-        <Layout>
-          <Table />
-        </Layout>
-      </Route>
-      <Route path="/wiki">
-        <Layout>
-          <WikiApp />
-        </Layout>
-      </Route>
-      <Route path="/comments">
-        <Layout>
-          <CommentsApp />
-        </Layout>
-      </Route>
+      {menus.map((v) => (
+        <Route path={v.path} key={v.path}>
+          <Layout>
+            <v.component />
+          </Layout>
+        </Route>
+      ))}
       <Route exact path="*">
         <h1>404 Not Found</h1>
       </Route>
