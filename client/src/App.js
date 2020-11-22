@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from './components/Layout'
 import Table from './pages/Table'
 import WikiApp from './apps/wiki/App'
+import CommentsApp from './apps/comments/App'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 const App = () => {
@@ -14,6 +15,9 @@ const App = () => {
           </Route>
           <Route path="/wiki">
             <WikiApp />
+          </Route>
+          <Route path="/comments">
+            <CommentsApp />
           </Route>
         </Switch>
       </Router>

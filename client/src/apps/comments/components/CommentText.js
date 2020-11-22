@@ -14,7 +14,7 @@ const CommentText = ({ handleSubmit }) => {
   }
 
   return (
-    <form className="mt-5" onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <label className="form-label">Comment Input</label>
       <input
         type="text"
