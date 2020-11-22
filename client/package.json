@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
     "bootstrap": "^5.0.0-alpha3",
+    "json-server": "^0.16.3",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -22,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sync": "git reset --hard origin/main && git pull"
+    "sync": "git reset --hard origin/main && git pull",
+    "server": "json-server --watch ./db.js -p 3001"
   },
   "eslintConfig": {
     "extends": [
