@@ -1,4 +1,3 @@
-import React from 'react'
 import Router from './components/Router'
 import { AuthProvider } from './stores/authContext'
 
