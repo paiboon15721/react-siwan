@@ -8,7 +8,6 @@ const PrivateRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={() => {
-        console.log(user)
         if (user) {
           return children
         } else {
