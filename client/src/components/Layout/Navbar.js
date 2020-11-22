@@ -9,17 +9,22 @@ const Navbar = () => (
     <div className="position-sticky pt-3">
       <ul className="nav flex-column">
         <li className="nav-item">
-          <Link to="/wiki">Wiki</Link>
-          <a className="nav-link active" aria-current="page" href="#">
+          <Link className="nav-link active" to="/table">
             <span data-feather="home"></span>
-            Dashboard
-          </a>
+            Table
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
-            <span data-feather="file"></span>
-            Orders
-          </a>
+          <Link className="nav-link" to="/wiki">
+            <span data-feather="home"></span>
+            Wiki
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/comments">
+            <span data-feather="home"></span>
+            Comments
+          </Link>
         </li>
       </ul>
     </div>
