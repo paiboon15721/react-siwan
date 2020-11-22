@@ -5,6 +5,7 @@ import ControlledForm from '../pages/ControlledForm'
 import UncontrolledForm from '../pages/UncontrolledForm'
 import HookForm from '../pages/HookForm'
 import AppContext from '../pages/AppContext'
+import UseReducer from '../pages/UseReducer'
 
 const menus = [
   {
@@ -47,6 +48,12 @@ const menus = [
     path: '/app-context',
     name: 'App Context',
     component: AppContext,
+    allowRoles: ['guest', 'manager'],
+  },
+  {
+    path: '/use-reducer',
+    name: 'Use Reducer',
+    component: UseReducer,
     allowRoles: ['guest', 'manager'],
   },
 ]
