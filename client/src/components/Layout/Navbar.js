@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import menus from '../../config/menus'
 
 const Navbar = () => {
-  const { pathname } = useLocation()
-
   return (
     <nav
       id="sidebarMenu"
@@ -14,12 +12,13 @@ const Navbar = () => {
         <ul className="nav flex-column">
           {menus.map((v) => (
             <li className="nav-item" key={v.path}>
-              <Link
-                className={`nav-link ${pathname === v.path ? 'active' : ''}`}
+              <NavLink
+                className="nav-link"
                 to={v.path}
+                activeClassName="active"
               >
                 {v.name}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
