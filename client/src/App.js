@@ -1,28 +1,8 @@
 import React from 'react'
-import Layout from './components/Layout'
-import Table from './pages/Table'
-import WikiApp from './apps/wiki/App'
-import CommentsApp from './apps/comments/App'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import Router from './components/Router'
 
 const App = () => {
-  return (
-    <Layout>
-      <Router>
-        <Switch>
-          <Route path="/table">
-            <Table />
-          </Route>
-          <Route path="/wiki">
-            <WikiApp />
-          </Route>
-          <Route path="/comments">
-            <CommentsApp />
-          </Route>
-        </Switch>
-      </Router>
-    </Layout>
-  )
+  return <Router />
 }
 
 export default App
