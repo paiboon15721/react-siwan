@@ -1,9 +1,8 @@
 import React from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
-import Table from '../../pages/Table'
 
-const App = () => {
+const App = ({ children }) => {
   return (
     <>
       <Header />
@@ -11,7 +10,7 @@ const App = () => {
         <div className="row">
           <Navbar />
           <main className="col-md-9 ml-sm-auto col-lg-10 px-md-4 mt-4">
-            <Table />
+            {children}
           </main>
         </div>
       </div>
