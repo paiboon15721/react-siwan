@@ -4,6 +4,8 @@ import CommentsApp from '../apps/comments/App'
 import ControlledForm from '../pages/ControlledForm'
 import UncontrolledForm from '../pages/UncontrolledForm'
 import HookForm from '../pages/HookForm'
+import AppContext from '../pages/AppContext'
+import App from '../apps/wiki/App'
 
 const menus = [
   {
@@ -35,6 +37,11 @@ const menus = [
     path: '/hook-form',
     name: 'Hook Form',
     component: HookForm,
+  },
+  {
+    path: '/app-context',
+    name: 'App Context',
+    component: AppContext,
   },
 ]
 
