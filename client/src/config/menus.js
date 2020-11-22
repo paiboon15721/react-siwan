@@ -6,6 +6,7 @@ import UncontrolledForm from '../pages/UncontrolledForm'
 import HookForm from '../pages/HookForm'
 import AppContext from '../pages/AppContext'
 import UseReducer from '../pages/UseReducer'
+import TryRedux from '../pages/TryRedux'
 
 const menus = [
   {
@@ -54,6 +55,12 @@ const menus = [
     path: '/use-reducer',
     name: 'Use Reducer',
     component: UseReducer,
+    allowRoles: ['guest', 'manager'],
+  },
+  {
+    path: '/try-redux',
+    name: 'Try Redux',
+    component: TryRedux,
     allowRoles: ['guest', 'manager'],
   },
 ]
